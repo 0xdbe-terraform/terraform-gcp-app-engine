@@ -29,8 +29,9 @@ module "gcp_iap" {
 }
 
 module "gcp_app_engine" {
-  source               = "git::https://github.com/0xdbe-terraform/terraform-gcp-app-engine.git?ref=v1.0.1"
+  source               = "git::https://github.com/0xdbe-terraform/terraform-gcp-app-engine.git?ref=v1.0.2"
   project_id           = module.gcp_project.project_id
+  iap_enable           = true
   oauth2_client_id     = module.gcp_iap.iap_client_id
   oauth2_client_secret = module.gcp_iap.iap_client_secret
 }
